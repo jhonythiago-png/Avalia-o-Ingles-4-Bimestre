@@ -1,407 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>📚 Resumo – Inglês</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📚 Resumo – Inglês</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #eef4fb; color: #14213d; padding-bottom: 80px; }
-
-.top-nav { background: #16233f; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.top-nav a { color: #93c5fd; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(37,99,235,0.25); border: 1px solid rgba(37,99,235,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav span { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
-
-.hero { background: linear-gradient(145deg,#1e3a8a,#2563eb,#dc2626); padding: 32px 20px 24px; text-align: center; position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.1), transparent 60%); pointer-events: none; }
-.hero-emoji { font-size: 3rem; display: block; margin-bottom: 10px; position: relative; }
-.hero h1 { font-size: 1.55rem; font-weight: 900; color: white; line-height: 1.2; position: relative; }
-.hero h2 { font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 400; margin-top: 6px; position: relative; }
-.hero-pill { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; position: relative; }
-
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #effcfa; color: #0f2f2c; padding-bottom: 80px; }
+.top-nav { background: #134e4a; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #5eead4; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav span { color: rgba(255,255,255,.55); font-size: .78rem; }
+.hero { background: linear-gradient(145deg,#115e59,#0d9488,#f97316); padding: 30px 20px 22px; text-align: center; }
+.hero-emoji { font-size: 3rem; display: block; margin-bottom: 8px; }
+.hero h1 { font-size: 1.5rem; font-weight: 900; color: #fff; }
+.hero h2 { font-size: .95rem; color: rgba(255,255,255,.85); font-weight: 400; margin-top: 6px; }
+.hero-pill { display: inline-block; background: rgba(255,255,255,.2); color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; }
 .print-btn-wrap { text-align: right; padding: 10px 16px 0; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(37,99,235,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(37,99,235,0.7); cursor: pointer; }
-.print-btn:hover { border-color: #2563eb; color: #2563eb; }
-
-.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 8px; background: #eef4fb; border-bottom: 1px solid #d6e4f7; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
-.nav-dot { background: none; border: 2px solid #93c5fd; color: #2563eb; font-size: 0.68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
-.nav-dot.active, .nav-dot:active { background: #2563eb; color: white; border-color: #2563eb; }
-
-.section { padding: 20px 16px 8px; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #0d9488; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #0d9488; cursor: pointer; }
+.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 8px; background: #effcfa; border-bottom: 1px solid #c9efe8; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
+.nav-dot { background: none; border: 2px solid #5eead4; color: #0f766e; font-size: .68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
+.nav-dot.active { background: #0d9488; color: #fff; border-color: #0d9488; }
+.group-title { margin: 22px 16px 0; padding: 10px 14px; background: linear-gradient(135deg,#0d9488,#f97316); color: #fff; border-radius: 12px; font-weight: 900; font-size: 1rem; }
+.section { padding: 20px 16px 8px; max-width: 720px; margin: 0 auto; }
 .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
-.s1 { background: linear-gradient(135deg,#2563eb,#60a5fa); }
-.s2 { background: linear-gradient(135deg,#7c3aed,#a855f7); }
-.s3 { background: linear-gradient(135deg,#d97706,#f59e0b); }
-.s4 { background: linear-gradient(135deg,#dc2626,#f43f5e); }
-.s5 { background: linear-gradient(135deg,#f59e0b,#facc15); }
-.s6 { background: linear-gradient(135deg,#16a34a,#22c55e); }
-.section-title { font-size: 1.05rem; font-weight: 800; color: #14213d; }
-.section-sub { font-size: 0.74rem; color: #8291a8; margin-top: 2px; }
-
-.card { background: white; border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(37,99,235,0.08); border: 1px solid #dce8fa; }
-.card-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #2563eb; margin-bottom: 10px; }
-
-.tip { background: linear-gradient(135deg,#eff6ff,#fdf2f8); border-left: 4px solid #60a5fa; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.6; }
-.tip .tip-title { font-size: 0.7rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-.tip strong { color: #2563eb; }
-
-.rule-box { background: white; border: 2px solid #2563eb; border-radius: 14px; padding: 14px; margin-bottom: 12px; }
-.rule-title { font-size: 0.7rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.rule-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #dce8fa; }
-.rule-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.rule-tag { color: white; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
-.bg-blue   { background: #2563eb; }
-.bg-purple { background: #7c3aed; }
-.bg-amber  { background: #d97706; }
-.bg-red    { background: #dc2626; }
-.bg-green  { background: #16a34a; }
-.rule-text { font-size: 0.88rem; line-height: 1.55; }
-.rule-text em { color: #2563eb; font-style: normal; font-weight: 700; }
-.rule-text small { display: block; color: #93a1b8; font-size: 0.78rem; margin-top: 2px; }
-
-.example-box { background: #f7faff; border: 1.5px solid #dce8fa; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.7; }
-.example-box .ex-label { font-size: 0.68rem; font-weight: 700; color: #8291a8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-.ex-correct { color: #16a34a; font-weight: 700; }
-
-.word-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.word-item { background: #f7faff; border: 1.5px solid #dce8fa; border-radius: 12px; padding: 10px 12px; }
-.word-item .word-main { font-size: 0.92rem; font-weight: 800; color: #2563eb; }
-.word-item .word-def  { font-size: 0.76rem; color: #6b7280; margin-top: 2px; }
-
-.abc-strip { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-.abc-letter { width: 30px; height: 30px; border-radius: 8px; background: #f7faff; border: 1.5px solid #dce8fa; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #2563eb; }
-
-.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-home { background: rgba(37,99,235,0.12); border: 1.5px solid rgba(37,99,235,0.25); color: #2563eb !important; }
-.btn-next { background: linear-gradient(135deg,#2563eb,#60a5fa); color: white !important; }
-
-.divider { height: 1px; background: #dce8fa; margin: 8px 16px 0; }
-.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #dce8fa; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
-.pf-label { font-size: 0.75rem; font-weight: 700; color: #2563eb; white-space: nowrap; }
-.pf-bar { flex: 1; background: #dce8fa; border-radius: 10px; height: 8px; overflow: hidden; }
-.pf-fill { height: 100%; background: linear-gradient(90deg,#2563eb,#16a34a); border-radius: 10px; transition: width 0.5s; width: 0%; }
-.pf-pct { font-size: 0.75rem; font-weight: 700; color: #8291a8; }
-.credit { text-align: center; padding: 16px 14px 8px; font-size: 0.75rem; color: #bbb; }
-.credit strong { color: #93c5fd; }
-
-@media print {
-  .top-nav, .print-btn-wrap, .nav-dots, .progress-footer, .bottom-nav, .hero, .credit, .pf-bar, .pf-pct { display: none !important; }
-  .print-title-header { display: block !important; }
-  html, body { background: white !important; color: #111 !important; font-size: 11pt; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body { padding-bottom: 0 !important; }
-  body * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; overflow: visible !important; }
-
-  .section { padding: 10px 0 4px !important; page-break-inside: avoid !important; }
-  .section-header { margin-bottom: 8px !important; }
-  .section-icon { width: 32px !important; height: 32px !important; font-size: 1rem !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .section-title { font-size: 12pt !important; font-weight: 700 !important; color: #14213d !important; }
-  .section-sub   { color: #555 !important; }
-
-  .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; margin-bottom: 8px !important; padding: 10px !important; }
-  .card-title { color: #2563eb !important; }
-
-  .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 10px !important; }
-  .rule-title { color: #2563eb !important; }
-  .rule-tag { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; font-size: 8pt !important; padding: 2px 6px !important; }
-  .rule-text { font-size: 10pt !important; }
-  .rule-text em { color: #2563eb !important; }
-  .rule-row { border-bottom: 1px dashed #ccc !important; }
-
-  .tip { border-left: 3px solid #2563eb !important; background: #f4f8ff !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 8px 10px !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .tip strong { color: #2563eb !important; }
-
-  .example-box { border: 1px solid #ccc !important; border-radius: 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  .ex-correct { color: #166534 !important; }
-
-  .word-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-  .word-item { border: 1px solid #ddd !important; border-radius: 4px !important; }
-  .word-item .word-main { color: #2563eb !important; }
-
-  .abc-strip { break-inside: avoid !important; page-break-inside: avoid !important; }
-  .abc-letter { border: 1px solid #ddd !important; }
-
-  .divider { border-top: 1px solid #ddd !important; display: block !important; }
-
-  #sec1 { page-break-before: avoid !important; }
-  #sec2, #sec3, #sec4, #sec5, #sec6 { page-break-before: always !important; }
-}
-
-/* ---- PDF EXPORT (JS-generated) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero, body.pdf-export .credit, body.pdf-export .pf-bar, body.pdf-export .pf-pct { display: none !important; }
-body.pdf-export .print-title-header { display: block !important; }
-body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
-body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; }
-body.pdf-export .section { padding: 10px 0 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .section-title { font-weight: 700 !important; color: #14213d !important; }
-body.pdf-export .section-sub { color: #555 !important; }
-body.pdf-export .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .card-title { color: #2563eb !important; }
-body.pdf-export .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .rule-title, body.pdf-export .rule-text em { color: #2563eb !important; }
+.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: linear-gradient(135deg,#0d9488,#f97316); }
+.section-title { font-size: 1.05rem; font-weight: 800; }
+.section-sub { font-size: .75rem; color: #4f7a74; margin-top: 2px; }
+.tip { background: linear-gradient(135deg,#e0f7f3,#f5fdfb); border-left: 4px solid #f97316; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: .92rem; line-height: 1.65; break-inside: avoid; }
+.tip-title { font-size: .72rem; font-weight: 700; color: #0f766e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.tip strong, .rule-text em { color: #0f766e; font-style: normal; font-weight: 700; }
+.rule-box { background: #fff; border: 2px solid #0d9488; border-radius: 14px; padding: 14px; margin-bottom: 12px; break-inside: avoid; }
+.rule-title { font-size: .72rem; font-weight: 700; color: #0d9488; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.rule-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px dashed #c9efe8; }
+.rule-row:last-child { border-bottom: none; }
+.rule-tag { color: #fff; font-size: .75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; max-width: 150px; }
+.rule-text { font-size: .9rem; line-height: 1.55; }
+.example-box { background: #f5fdfb; border: 1.5px solid #c9efe8; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: .9rem; line-height: 1.7; break-inside: avoid; }
+.ex-label { font-size: .68rem; font-weight: 700; color: #4f7a74; text-transform: uppercase; margin-bottom: 6px; }
+.divider { height: 1px; background: #c9efe8; margin: 8px 16px 0; }
+.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px auto 10px; max-width: 720px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; border: 1.5px solid #0d9488; color: #0d9488; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#0d9488,#f97316); color: #fff; border: none; }
+.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #c9efe8; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
+.pf-label { font-size: .75rem; font-weight: 700; color: #0d9488; }
+.pf-bar { flex: 1; background: #c9efe8; border-radius: 10px; height: 8px; overflow: hidden; }
+.pf-fill { height: 100%; background: linear-gradient(90deg,#0d9488,#16a34a); width: 0%; transition: width .4s; }
+.pf-pct { font-size: .75rem; font-weight: 700; color: #4f7a74; }
+.credit { text-align: center; padding: 16px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .group-title { border-bottom: 2px solid #0d9488; border-radius: 0; padding: 4px 0; }
+body.pdf-export .rule-box { border: 1.5px solid #555 !important; }
 body.pdf-export .rule-row { border-bottom: 1px dashed #ccc !important; }
-body.pdf-export .tip { border-left: 3px solid #2563eb !important; background: #f4f8ff !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .tip strong { color: #2563eb !important; }
-body.pdf-export .example-box { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .ex-correct { color: #166534 !important; }
-body.pdf-export .word-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .word-item { border: 1px solid #ddd !important; }
-body.pdf-export .word-item .word-main { color: #2563eb !important; }
-body.pdf-export .abc-strip { break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .abc-letter { border: 1px solid #ddd !important; }
-body.pdf-export .divider { border-top: 1px solid #ddd !important; display: block !important; }
-body.pdf-export #sec1 { page-break-before: avoid !important; }
-body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-export #sec5, body.pdf-export #sec6 { page-break-before: always !important; }
-</style>
-</head>
-<body>
-
-<!-- PRINT HEADER (hidden on screen) -->
-<div class="print-title-header" style="display:none;text-align:center;padding:0 0 12px;border-bottom:2px solid #2563eb;margin-bottom:16px;">
-  <div style="font-size:14pt;font-weight:900;color:#2563eb;">English — Study Guide</div>
-  <div style="font-size:10pt;color:#555;margin-top:4px;">Unit 3 — Around the Town · Desenvolvido por Jhony Beraldo</div>
-</div>
-
-<div class="top-nav">
-  <a href="index.html">🏠 Início</a>
-  <span>📚 Resumo do Conteúdo</span>
-</div>
-<div class="hero">
-  <span class="hero-emoji">📚</span>
-  <h1>Resumo de Inglês</h1>
-  <h2>Unit 3 · Around the Town</h2>
-  <div class="hero-pill">📖 Leia antes de fazer a prova!</div>
-</div>
-
+body.pdf-export .tip { border-left: 3px solid #0d9488 !important; background: #f6f6f6 !important; }
+body.pdf-export .example-box { border: 1px solid #ccc !important; }
+body.pdf-export .section { break-inside: auto; }
+body.pdf-export .rule-tag { border: 1px solid #999; }
+body.pdf-export .section-header { break-after: avoid; page-break-after: avoid; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .group-title { break-after: avoid; page-break-after: avoid; }
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span>📚 Resumo do Conteúdo</span></div>
+<div class="hero"><span class="hero-emoji">📚</span><h1>Resumo de Inglês</h1><h2>4º Bimestre · Unit 4 — My Vacation</h2><div class="hero-pill">📝 Leia com calma antes de fazer os níveis!</div></div>
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-
-<div class="nav-dots">
-  <button class="nav-dot active" data-target="sec1">🏙️ Places</button>
-  <button class="nav-dot" data-target="sec2">🔤 Alphabet</button>
-  <button class="nav-dot" data-target="sec3">📍 Adverbs</button>
-  <button class="nav-dot" data-target="sec4">🚗 Transport</button>
-  <button class="nav-dot" data-target="sec5">🚦 Signs</button>
-  <button class="nav-dot" data-target="sec6">🏙️ City x Town</button>
-</div>
-
-<!-- SEC 1 -->
-<div class="section" id="sec1">
-  <div class="section-header">
-    <div class="section-icon s1">🏙️</div>
-    <div><div class="section-title">Places Around Town</div><div class="section-sub">Lesson 7 · Lugares da cidade em inglês</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Por que aprender esses lugares?</div>
-    Sempre que falamos sobre nossa cidade, precisamos saber o nome dos lugares em inglês: onde compramos pão, onde estudamos, onde vamos ao médico.
-  </div>
-
-  <div class="word-grid">
-    <div class="word-item"><div class="word-main">restaurant</div><div class="word-def">restaurante</div></div>
-    <div class="word-item"><div class="word-main">hospital</div><div class="word-def">hospital</div></div>
-    <div class="word-item"><div class="word-main">post office</div><div class="word-def">correios</div></div>
-    <div class="word-item"><div class="word-main">police station</div><div class="word-def">delegacia</div></div>
-    <div class="word-item"><div class="word-main">drugstore</div><div class="word-def">farmácia</div></div>
-    <div class="word-item"><div class="word-main">bank</div><div class="word-def">banco</div></div>
-    <div class="word-item"><div class="word-main">mall</div><div class="word-def">shopping</div></div>
-    <div class="word-item"><div class="word-main">supermarket</div><div class="word-def">supermercado</div></div>
-    <div class="word-item"><div class="word-main">school</div><div class="word-def">escola</div></div>
-    <div class="word-item"><div class="word-main">library</div><div class="word-def">biblioteca</div></div>
-    <div class="word-item"><div class="word-main">church</div><div class="word-def">igreja</div></div>
-    <div class="word-item"><div class="word-main">park</div><div class="word-def">parque</div></div>
-    <div class="word-item"><div class="word-main">bakery</div><div class="word-def">padaria</div></div>
-    <div class="word-item"><div class="word-main">pet shop</div><div class="word-def">loja de animais</div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Pergunta útil</div>
-    <strong>What place is this?</strong> (Que lugar é este?) → <span class="ex-correct">It is a restaurant.</span> (É um restaurante.)
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 2 -->
-<div class="section" id="sec2">
-  <div class="section-header">
-    <div class="section-icon s2">🔤</div>
-    <div><div class="section-title">The Alphabet</div><div class="section-sub">Lesson 7 · O alfabeto e como soletrar</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 How do you spell...?</div>
-    Para perguntar como se escreve uma palavra em inglês, usamos: <strong>"How do you spell...?"</strong> A resposta é dizer cada letra separadamente.
-  </div>
-
-  <div class="abc-strip">
-    <div class="abc-letter">A</div><div class="abc-letter">B</div><div class="abc-letter">C</div><div class="abc-letter">D</div>
-    <div class="abc-letter">E</div><div class="abc-letter">F</div><div class="abc-letter">G</div><div class="abc-letter">H</div>
-    <div class="abc-letter">I</div><div class="abc-letter">J</div><div class="abc-letter">K</div><div class="abc-letter">L</div>
-    <div class="abc-letter">M</div><div class="abc-letter">N</div><div class="abc-letter">O</div><div class="abc-letter">P</div>
-    <div class="abc-letter">Q</div><div class="abc-letter">R</div><div class="abc-letter">S</div><div class="abc-letter">T</div>
-    <div class="abc-letter">U</div><div class="abc-letter">V</div><div class="abc-letter">W</div><div class="abc-letter">X</div>
-    <div class="abc-letter">Y</div><div class="abc-letter">Z</div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo do livro</div>
-    <strong>How do you spell "park"?</strong> → <span class="ex-correct">P - A - R - K!</span><br>
-    <strong>How do you spell "bank"?</strong> → <span class="ex-correct">B - A - N - K!</span>
-  </div>
-
-  <div class="tip"><div class="tip-title">🧠 Macete</div>
-    Treine soletrando os nomes dos lugares da Seção 1 em voz alta, letra por letra. Isso ajuda a memorizar a escrita certa!
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 3 -->
-<div class="section" id="sec3">
-  <div class="section-header">
-    <div class="section-icon s3">📍</div>
-    <div><div class="section-title">Adverbs of Place</div><div class="section-sub">Lesson 8 · Advérbios de lugar</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Para que servem?</div>
-    Usamos os advérbios de lugar para responder à pergunta <strong>"Where...?"</strong> (Onde...?) e dizer onde alguém ou algo está.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Os 5 advérbios de lugar</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">here</span><div class="rule-text">aqui<small>Ex: I am here at the school. (Estou aqui na escola.)</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-purple">there</span><div class="rule-text">lá / ali<small>Ex: She is there at the park. (Ela está lá no parque.)</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-green">inside</span><div class="rule-text">dentro de<small>Ex: He is inside the bakery. (Ele está dentro da padaria.)</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">outside</span><div class="rule-text">fora de<small>Ex: They are outside the pet shop. (Eles estão fora da pet shop.)</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-red">in front of</span><div class="rule-text">em frente de<small>Ex: She is in front of the restaurant. (Ela está em frente ao restaurante.)</small></div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Pergunta e resposta</div>
-    <strong>Where is Martina?</strong> → <span class="ex-correct">She is inside the park.</span><br>
-    <strong>Where are Eric and Roger?</strong> → <span class="ex-correct">They are outside the bakery.</span>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 4 -->
-<div class="section" id="sec4">
-  <div class="section-header">
-    <div class="section-icon s4">🚗</div>
-    <div><div class="section-title">Means of Transportation</div><div class="section-sub">Lesson 9 · Meios de transporte</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Como usamos cada um?</div>
-    Cada meio de transporte serve para uma função: ir à escola, apagar incêndio, socorrer pessoas, viajar rápido pelo céu ou pela água.
-  </div>
-
-  <div class="word-grid">
-    <div class="word-item"><div class="word-main">bike</div><div class="word-def">bicicleta</div></div>
-    <div class="word-item"><div class="word-main">car</div><div class="word-def">carro</div></div>
-    <div class="word-item"><div class="word-main">train</div><div class="word-def">trem</div></div>
-    <div class="word-item"><div class="word-main">airplane</div><div class="word-def">avião</div></div>
-    <div class="word-item"><div class="word-main">truck</div><div class="word-def">caminhão</div></div>
-    <div class="word-item"><div class="word-main">taxi</div><div class="word-def">táxi</div></div>
-    <div class="word-item"><div class="word-main">fire truck</div><div class="word-def">caminhão de bombeiro</div></div>
-    <div class="word-item"><div class="word-main">motorcycle</div><div class="word-def">moto</div></div>
-    <div class="word-item"><div class="word-main">boat</div><div class="word-def">barco</div></div>
-    <div class="word-item"><div class="word-main">helicopter</div><div class="word-def">helicóptero</div></div>
-    <div class="word-item"><div class="word-main">ambulance</div><div class="word-def">ambulância</div></div>
-    <div class="word-item"><div class="word-main">van</div><div class="word-def">van</div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplos do livro</div>
-    She likes to ride her <strong>bike</strong> to school.<br>
-    Firefighters use a <strong>fire truck</strong>.<br>
-    The <strong>ambulance</strong> takes people to the hospital.<br>
-    The <strong>airplane</strong> flies high in the sky.
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 5 -->
-<div class="section" id="sec5">
-  <div class="section-header">
-    <div class="section-icon s5">🚦</div>
-    <div><div class="section-title">Traffic Signs</div><div class="section-sub">Lesson 9 · Sinais de trânsito</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Segurança no trânsito</div>
-    Os sinais de trânsito existem para manter todo mundo seguro nas ruas: pedestres, ciclistas e motoristas.
-  </div>
-
-  <div class="word-grid">
-    <div class="word-item"><div class="word-main">stop</div><div class="word-def">pare</div></div>
-    <div class="word-item"><div class="word-main">speed limit</div><div class="word-def">limite de velocidade</div></div>
-    <div class="word-item"><div class="word-main">right turn only</div><div class="word-def">só vira à direita</div></div>
-    <div class="word-item"><div class="word-main">no left turn</div><div class="word-def">proibido virar à esquerda</div></div>
-    <div class="word-item"><div class="word-main">pedestrian crossing</div><div class="word-def">faixa de pedestre</div></div>
-    <div class="word-item"><div class="word-main">traffic lights</div><div class="word-def">semáforo</div></div>
-    <div class="word-item"><div class="word-main">bike parking</div><div class="word-def">estacionamento de bike</div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 6 -->
-<div class="section" id="sec6">
-  <div class="section-header">
-    <div class="section-icon s6">🏙️</div>
-    <div><div class="section-title">City x Town</div><div class="section-sub">Curiosity · A diferença entre cidade grande e pequena</div></div>
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Duas palavras para "cidade"</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">city</span><div class="rule-text">Cidade <em>grande</em>, urbana e mais populosa.<small>Big, urban, and more populous.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-green">town</span><div class="rule-text">Cidade <em>pequena</em> e menos populosa.<small>Small and less populous.</small></div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💬 Where do you prefer to live?</div>
-    (Onde você prefere morar?) — Pense na sua resposta e pratique falando em inglês: <strong>"I prefer to live in a city / in a town, because..."</strong>
-  </div>
-
-  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
-  <div class="pf-pct" id="pfPct">0%</div>
-</div>
-
-<div class="bottom-nav">
-  <a href="index.html" class="btn-home">🏠 Voltar ao Início</a>
-  <a href="nivel1_basico.html" class="btn-next">⭐ Nível 1 →</a>
-</div>
-
-<div style="height:60px;"></div>
-<div class="progress-footer">
-  <div class="pf-label">📖 Progresso</div>
-  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
-  <div class="pf-pct" id="pfPct">0%</div>
-</div>
-
+<div class="nav-dots"><button class="nav-dot active" data-target="sec1">🌤️ Nature</button><button class="nav-dot" data-target="sec2">🏝️ Places</button><button class="nav-dot" data-target="sec3">🗺️ Famous</button><button class="nav-dot" data-target="sec4">🏄 Activities</button><button class="nav-dot" data-target="sec5">✅ Can</button><button class="nav-dot" data-target="sec6">💬 Like</button><button class="nav-dot" data-target="sec7">🗓️ Weather</button><button class="nav-dot" data-target="sec8">✍️ Escrita</button><button class="nav-dot" data-target="sec9">⭐ Dicas</button></div>
+<div class="group-title">🏖️ Unit 4 — My Vacation: vocabulário</div><div class="section" id="sec1"><div class="section-header"><div class="section-icon">🌤️</div><div><div class="section-title">Nature (Lesson 10)</div><div class="section-sub">Palavras da natureza</div></div></div><div class="rule-box"><div class="rule-title">📐 Nature words</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">sun</span><div class="rule-text">sol</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">sea</span><div class="rule-text">mar</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">sand</span><div class="rule-text">areia</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">shell</span><div class="rule-text">concha</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">cloud</span><div class="rule-text">nuvem</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">sky</span><div class="rule-text">céu</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">rock</span><div class="rule-text">pedra, rocha</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">rainbow</span><div class="rule-text">arco-íris</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">star</span><div class="rule-text">estrela</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">moon</span><div class="rule-text">lua</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">tree</span><div class="rule-text">árvore</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">flower</span><div class="rule-text">flor</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">rain</span><div class="rule-text">chuva</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">snow</span><div class="rule-text">neve</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">mountain</span><div class="rule-text">montanha</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">ocean</span><div class="rule-text">oceano</div></div></div><div class="tip"><div class="tip-title">🌊 Ocean x sea (Curiosity)</div>O <strong>ocean</strong> (oceano) é uma enorme massa de água que cobre cerca de <strong>71%</strong> da superfície da Terra. O <strong>sea</strong> (mar) é parte do oceano: é <strong>menor</strong> e fica parcialmente cercado por terra.</div><div class="tip"><div class="tip-title">🌎 Take care of the environment!</div>Quer dizer: <strong>cuide do meio ambiente!</strong> No livro, o Eric cuida da natureza (e você também pode).</div><div class="tip"><div class="tip-title">🧠 Macete</div>Pra escrever sobre a natureza: <strong>I like + palavra + because...</strong> (Eu gosto de ... porque...).</div></div><div class="divider"></div><div class="section" id="sec2"><div class="section-header"><div class="section-icon">🏝️</div><div><div class="section-title">Vacation places</div><div class="section-sub">Lugares pra passar as férias</div></div></div><div class="rule-box"><div class="rule-title">📐 Vacation places</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">big city</span><div class="rule-text">cidade grande</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">small city</span><div class="rule-text">cidade pequena</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">farm</span><div class="rule-text">fazenda, sítio</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">beach</span><div class="rule-text">praia</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">mountain</span><div class="rule-text">montanha</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">camping</span><div class="rule-text">acampamento</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">water park</span><div class="rule-text">parque aquático</div></div></div><div class="tip"><div class="tip-title">🧠 Pra falar das suas férias</div><strong>On my next vacation, I want to go to the beach.</strong> = Nas minhas próximas férias, eu quero ir à praia.<br><strong>Where do you want to go?</strong> = Onde você quer ir?</div></div><div class="divider"></div><div class="section" id="sec3"><div class="section-header"><div class="section-icon">🗺️</div><div><div class="section-title">Famous places (CLIL)</div><div class="section-sub">Monumentos e seus países</div></div></div><div class="rule-box"><div class="rule-title">📐 Monumento ↔ país</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">Eiffel Tower</span><div class="rule-text">France (França)</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Statue of Liberty</span><div class="rule-text">USA (Estados Unidos)</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Christ the Redeemer</span><div class="rule-text">Brazil (Brasil)</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Great Wall</span><div class="rule-text">China</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Colosseum</span><div class="rule-text">Italy (Itália)</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Big Ben</span><div class="rule-text">United Kingdom (Reino Unido)</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">Sydney Opera House</span><div class="rule-text">Australia (Austrália)</div></div></div></div><div class="divider"></div><div class="section" id="sec4"><div class="section-header"><div class="section-icon">🏄</div><div><div class="section-title">Vacation activities (Lesson 11)</div><div class="section-sub">O que a gente faz nas férias</div></div></div><div class="rule-box"><div class="rule-title">📐 Activities</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">go swimming</span><div class="rule-text">nadar</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">ride a bike</span><div class="rule-text">andar de bicicleta</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">go camping</span><div class="rule-text">acampar</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">hike</span><div class="rule-text">fazer trilha, caminhar na natureza</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">play tennis</span><div class="rule-text">jogar tênis</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">surf</span><div class="rule-text">surfar</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">play the guitar</span><div class="rule-text">tocar violão</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">ride a horse</span><div class="rule-text">andar a cavalo</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">plant</span><div class="rule-text">plantar</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">visit a museum</span><div class="rule-text">visitar um museu</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">go fishing</span><div class="rule-text">pescar</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">relax</span><div class="rule-text">relaxar</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">travel</span><div class="rule-text">viajar</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">read a book</span><div class="rule-text">ler um livro</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">try a new sport</span><div class="rule-text">experimentar um esporte novo</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">build a sandcastle</span><div class="rule-text">construir um castelo de areia</div></div></div><div class="tip"><div class="tip-title">💬 O diálogo "Vacation plans"</div>Nicole pergunta a Sally: <strong>What are your plans for the next vacation?</strong> (Quais são seus planos para as próximas férias?). Sally ainda não decidiu e lista opções: nadar, andar de bicicleta, acampar, surfar, pescar, relaxar, viajar, ler, tentar um esporte novo e visitar um museu. Nicole responde: <strong>Good options, Sally!</strong> (Boas opções!)</div></div><div class="divider"></div><div class="group-title">🗣️ Unit 4 — Frases e gramática</div><div class="section" id="sec5"><div class="section-header"><div class="section-icon">✅</div><div><div class="section-title">Can / Can't</div><div class="section-sub">Dizendo o que você sabe (ou não) fazer</div></div></div><div class="rule-box"><div class="rule-title">📐 As regras</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">I can ...</span><div class="rule-text"><em>Eu consigo / eu sei...</em> Ex.: I can swim. (Eu sei nadar.)</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">I can't ...</span><div class="rule-text"><em>Eu não consigo / não sei...</em> Ex.: I can't surf. (Eu não sei surfar.)</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Can you ...?</span><div class="rule-text"><em>Você sabe...?</em> Ex.: Can you fish, Quico?</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Resposta curta</span><div class="rule-text"><em>Yes, I can.</em> (Sim, eu sei.) ou <em>No, I can't.</em> (Não, eu não sei.)</div></div></div><div class="example-box"><div class="ex-label">Do livro</div><strong>Can you play tennis, Gi?</strong> — <strong>No, I can't play tennis.</strong><br><strong>Can you fish, Quico?</strong> — <strong>Yes, I can fish.</strong></div><div class="rule-box"><div class="rule-title">📐 A tabela do livro (Luísa, Cazuza e Sabino)</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">Luísa</span><div class="rule-text">✅ ride a bike · ❌ swim · ❌ play the guitar · ❌ surf</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Cazuza</span><div class="rule-text">✅ swim · ✅ play the guitar · ✅ surf · ❌ ride a bike</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Sabino</span><div class="rule-text">✅ swim · ✅ ride a bike · ❌ play the guitar · ❌ surf</div></div></div><div class="tip"><div class="tip-title">🧠 Frases certas da tabela</div>Luísa <strong>can</strong> ride a bike. · Luísa and Sabino <strong>can't</strong> play the guitar. · Cazuza <strong>can</strong> surf. · Cazuza <strong>can</strong> play the guitar. · Sabino <strong>can</strong> swim. · Cazuza <strong>can</strong> swim. · Luísa and Sabino <strong>can't</strong> surf. · Sabino <strong>can</strong> ride a bike.</div><div class="tip"><div class="tip-title">⚠️ Atenção</div>Depois de <strong>can</strong> e <strong>can't</strong> o verbo fica <strong>sem "s"</strong> e sem "to": <em>She can swim</em> (certo) · <em>She can swims</em> (errado) · <em>She can to swim</em> (errado).</div></div><div class="divider"></div><div class="section" id="sec6"><div class="section-header"><div class="section-icon">💬</div><div><div class="section-title">I like to... / I want to...</div><div class="section-sub">Falando do que você gosta e quer</div></div></div><div class="rule-box"><div class="rule-title">📐 What do you like to do?</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">I like to ...</span><div class="rule-text">Eu gosto de... Ex.: I like to swim. · I like to fish. · I like to relax.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">I love to ...</span><div class="rule-text">Eu adoro... Ex.: I love to swim.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">I want to ...</span><div class="rule-text">Eu quero... Ex.: I want to visit a museum.</div></div></div><div class="rule-box"><div class="rule-title">📐 Em cada lugar, o que eu gosto de fazer?</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">At the beach</span><div class="rule-text">play tennis · eat an ice cream · swim · build a sandcastle</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">At the farm</span><div class="rule-text">ride a horse · go fishing · plant · relax</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">At the mountains</span><div class="rule-text">hike · camp · ride a bike · go rock climbing</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">In the city</span><div class="rule-text">play with friends · read a book · swim in the pool · visit a museum</div></div></div><div class="example-box"><div class="ex-label">Perguntas e respostas do livro</div>Where do you want to go on your next vacation? <em>→ beach, farm, mountain ou city.</em><br>Who do you want there with you? <em>→ family ou friends.</em><br>What do you want to do there? <em>→ escreva três coisas.</em></div><div class="tip"><div class="tip-title">🧠 I can be active</div>Três atividades pra praticar mais: <strong>ride a bike, go camping, try a new sport, swim, run, hike</strong>. Dica pra escrever: <em>I can swim. I like to hike.</em></div></div><div class="divider"></div><div class="group-title">🗓️ Lesson 12, escrita e revisão</div><div class="section" id="sec7"><div class="section-header"><div class="section-icon">🗓️</div><div><div class="section-title">Weather, seasons and months</div><div class="section-sub">Clima, estações do ano e meses (Lesson 12)</div></div></div><div class="rule-box"><div class="rule-title">📐 Weather</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">sunny</span><div class="rule-text">ensolarado</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">windy</span><div class="rule-text">ventoso</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">cloudy</span><div class="rule-text">nublado</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">snowy</span><div class="rule-text">com neve</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">rainy</span><div class="rule-text">chuvoso</div></div></div><div class="rule-box"><div class="rule-title">📐 Seasons</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">summer</span><div class="rule-text">verão</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">winter</span><div class="rule-text">inverno</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">spring</span><div class="rule-text">primavera</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">fall</span><div class="rule-text">outono</div></div></div><div class="rule-box"><div class="rule-title">📐 Months</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">January</span><div class="rule-text">janeiro</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">February</span><div class="rule-text">fevereiro</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">March</span><div class="rule-text">março</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">April</span><div class="rule-text">abril</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">May</span><div class="rule-text">maio</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">June</span><div class="rule-text">junho</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">July</span><div class="rule-text">julho</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">August</span><div class="rule-text">agosto</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">September</span><div class="rule-text">setembro</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">October</span><div class="rule-text">outubro</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">November</span><div class="rule-text">novembro</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">December</span><div class="rule-text">dezembro</div></div></div><div class="tip"><div class="tip-title">🧠 Macete</div>Os meses em inglês começam com <strong>letra maiúscula</strong>: <em>January, February...</em> Já as estações e o clima usam letra minúscula no meio da frase.</div></div><div class="divider"></div><div class="section" id="sec8"><div class="section-header"><div class="section-icon">✍️</div><div><div class="section-title">Macetes pra escrever certinho</div><div class="section-sub">Como não errar a escrita em inglês</div></div></div><div class="tip"><div class="tip-title">💡 Por que isso importa?</div>Em inglês, uma letrinha trocada muda a palavra. Por isso, na hora de escrever, use os <strong>macetes</strong> abaixo pra lembrar a grafia certa.</div><div class="rule-box"><div class="rule-title">📐 Macetes de escrita</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">sky</span><div class="rule-text">S-K-Y. O céu termina com <em>Y</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">beach</span><div class="rule-text"><em>B + EACH</em>: a palavra "each" está escondida dentro de beach.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">flower</span><div class="rule-text"><em>FLOW + ER</em>. Termina com ER.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">shell</span><div class="rule-text"><em>SH</em> (como "shhh!") + <em>ELL</em>, com dois L.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">swim</span><div class="rule-text">S-W-I-M. Não esqueça o <em>W</em>!</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">horse</span><div class="rule-text">Tem um <em>E mudo</em> no final: H-O-R-S-E.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">bike</span><div class="rule-text">B-I-K-E. O <em>E</em> no final é mudo (igual a horse).</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">can</span><div class="rule-text">Só 3 letras: C-A-N. Começa com <em>C</em>, não com K.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">can't</span><div class="rule-text">CAN + <em>'T</em> (de NOT). O apóstrofo fica <em>antes do T</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">vacation</span><div class="rule-text">VA-CA-<em>TION</em>. O "tion" lê "chon", como o "ção" do português.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">France</span><div class="rule-text">Com <em>C</em> (como "França") e <em>F maiúsculo</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Brazil</span><div class="rule-text">Em inglês é com <em>Z</em> (em português é com S!). Também com B maiúsculo.</div></div></div><div class="tip"><div class="tip-title">🧠 Regra de ouro</div>Nomes de países e meses começam com <strong>letra maiúscula</strong>: <em>Brazil, France, January</em>. Depois de <strong>can</strong> e <strong>can't</strong>, o verbo vem <strong>sem "s"</strong>.</div></div><div class="divider"></div><div class="section" id="sec9"><div class="section-header"><div class="section-icon">⭐</div><div><div class="section-title">Dicas finais</div><div class="section-sub">Revisão relâmpago</div></div></div><div class="rule-box"><div class="rule-title">📐 Checklist antes da prova</div><div class="rule-row"><span class="rule-tag" style="background:#0d9488">1</span><div class="rule-text">Sei as palavras da natureza e dos lugares de férias?</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">2</span><div class="rule-text">Sei as atividades (go swimming, ride a bike, visit a museum...)?</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">3</span><div class="rule-text">Sei usar can e can't, e responder "Yes, I can" / "No, I can't"?</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">4</span><div class="rule-text">Sei falar "I like to..." e "I want to go to..."?</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">5</span><div class="rule-text">Lembro os monumentos e os países?</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">6</span><div class="rule-text">Sei o clima, as estações e os meses?</div></div></div><div class="tip"><div class="tip-title">🌟 Você consegue!</div>Leia o resumo em voz alta, repetindo as palavras. Falar ajuda a gravar! Depois faça os níveis e leia as explicações.</div></div><div class="divider"></div>
+<div class="bottom-nav"><a href="index.html">🏠 Início</a><a class="nx" href="nivel1_basico.html">⭐ Nível 1 →</a></div>
+<div style="height:60px"></div>
+<div class="progress-footer"><div class="pf-label">📖 Progresso</div><div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div><div class="pf-pct" id="pfPct">0%</div></div>
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-document.querySelectorAll('.nav-dot[data-target]').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dot').forEach(function(d) { d.classList.remove('active'); });
-    btn.classList.add('active');
-    var target = document.getElementById(btn.dataset.target);
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-var sections = ['sec1','sec2','sec3','sec4','sec5','sec6'];
-function updateProgress() {
-  var scrolled = window.scrollY + window.innerHeight;
-  var total = document.body.scrollHeight;
-  var pct = Math.min(100, Math.round((scrolled / total) * 100));
-  document.getElementById('pfFill').style.width = pct + '%';
-  document.getElementById('pfPct').textContent = pct + '%';
-  for (var i = sections.length - 1; i >= 0; i--) {
-    var el = document.getElementById(sections[i]);
-    if (el && window.scrollY >= el.offsetTop - 120) {
-      document.querySelectorAll('.nav-dot').forEach(function(d, idx) { d.classList.toggle('active', idx === i); });
-      break;
-    }
-  }
+var sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9'];
+document.querySelectorAll('.nav-dot').forEach(function(b){ b.addEventListener('click', function(){
+  document.querySelectorAll('.nav-dot').forEach(function(d){ d.classList.remove('active'); }); b.classList.add('active');
+  var t = document.getElementById(b.getAttribute('data-target')); if (t) t.scrollIntoView({behavior:'smooth', block:'start'}); }); });
+function updateProgress(){
+  var pct = Math.min(100, Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100));
+  document.getElementById('pfFill').style.width = pct + '%'; document.getElementById('pfPct').textContent = pct + '%';
+  for (var i = sections.length - 1; i >= 0; i--) { var el = document.getElementById(sections[i]);
+    if (el && window.scrollY >= el.offsetTop - 140) { document.querySelectorAll('.nav-dot').forEach(function(d, idx){ d.classList.toggle('active', idx === i); }); break; } }
 }
-window.addEventListener('scroll', updateProgress, { passive: true });
-updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true }); updateProgress();
 
 function downloadPDF() {
   var btn = document.getElementById('pdfBtn');
@@ -409,25 +85,15 @@ function downloadPDF() {
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Resumo_Ingles.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Resumo_Ingles_4Bim.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
-</script>
-</body>
-</html>
+
+</script></body></html>

@@ -1,472 +1,184 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>💎 Nível 3 – Avançado</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>💎 Nível 3 — Avançado – Inglês</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #14101f; min-height: 100vh; padding-bottom: 40px; color:#f5f0ff; }
-.top-nav { background: rgba(0,0,0,0.5); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.top-nav a.nav-home { color: #93c5fd; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(37,99,235,0.25); border: 1px solid rgba(37,99,235,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
-.exam-header { background: white; border: 2px solid #dc2626; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
-.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #dc2626; margin-bottom: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1b2340; color: #f0f4ff; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #10162b; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #5eead4; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: .78rem; color: rgba(255,255,255,.55); flex: 1; text-align: center; }
+.exam-header { background: #fff; border: 2px solid #fdba74; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; color: #333; }
+.eh-title { text-align: center; font-size: .95rem; font-weight: 900; color: #fdba74; margin-bottom: 14px; }
 .eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
-.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.eh-field input { width: 100%; border: none; border-bottom: 2px solid #dc2626; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
-.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(220,38,38,0.9),rgba(124,58,237,0.9)); margin-bottom: 18px; }
-.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
-.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
-.level-tag { display: inline-block; background: linear-gradient(90deg,#dc2626,#7c3aed); color: white; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-.wrap { padding: 0 14px; }
+.eh-field label { display: block; font-size: .68rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #fdba74; padding: 5px 2px; font-size: .9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(234,88,12,.9),rgba(168,85,247,.9)); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: #fff; }
+.header p { font-size: .82rem; color: rgba(255,255,255,.88); margin-top: 4px; }
+.level-tag { display: inline-block; background: rgba(255,255,255,.25); color: #fff; font-size: .72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; max-width: 700px; margin: 0 auto; }
 .print-btn-wrap { text-align: right; margin-bottom: 12px; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(167,139,250,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(167,139,250,0.85); cursor: pointer; }
-.info-banner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
-.info-banner strong { color: #a78bfa; }
-.score-bar { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-.score-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
-.score-num { font-size: 1.4rem; font-weight: 900; color: #a78bfa; }
-.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.2); }
-.card.reflect { border: 1px dashed rgba(167,139,250,0.4); }
-.q-num { background: linear-gradient(135deg,#dc2626,#7c3aed); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
-.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.4); margin-left: 6px; }
-.q-text { font-size: 0.97rem; color: #ede4ff; margin-bottom: 14px; line-height: 1.6; }
-.q-text strong { color: #a78bfa; font-weight: 700; }
-.q-hint { background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.25); border-radius: 10px; padding: 9px 12px; margin-bottom: 12px; font-size: 0.83rem; color: #fca5a5; line-height: 1.5; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #fdba74; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #fdba74; cursor: pointer; }
+.info-banner { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: .84rem; line-height: 1.5; }
+.info-banner strong { color: #fdba74; }
+.score-bar { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: .82rem; color: rgba(246,239,255,.65); }
+.score-num { font-size: 1.4rem; font-weight: 900; color: #5eead4; }
+.card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+.card.reflect { border: 1px dashed #fdba74; }
+.card.passage { border-left: 5px solid #fdba74; }
+.q-num { background: linear-gradient(135deg,#0d9488,#3b82f6); color: #fff; font-weight: 900; font-size: .75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: .72rem; opacity: .6; text-transform: uppercase; letter-spacing: .5px; margin-left: 6px; }
+.q-text { font-size: 1rem; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #fdba74; }
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt-btn { background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #ede4ff; transition: transform 0.1s; line-height: 1.4; }
-.opt-btn:active { transform: scale(0.97); }
-.opt-btn.correct { background: rgba(52,211,153,0.15); border-color: #34d399; color: #6ee7b7; }
-.opt-btn.wrong   { background: rgba(248,113,113,0.12); border-color: #f87171; color: #fca5a5; }
+.opt-btn { background: rgba(255,255,255,.06); border: 2px solid rgba(255,255,255,.14); border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-family: inherit; cursor: pointer; text-align: left; color: #f0f4ff; line-height: 1.4; transition: transform .1s; }
+.opt-btn:active { transform: scale(.97); }
+.opt-btn.correct { background: rgba(52,211,153,.15); border-color: #34d399; color: #a7f3d0; }
+.opt-btn.wrong { background: rgba(248,113,113,.15); border-color: #f87171; color: #fecaca; }
 .opt-btn.disabled { pointer-events: none; }
-.blank-input { background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 11px 13px; color: white; font-size: 0.92rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
-.blank-input:focus { border-color: #dc2626; }
-.blank-input.correct-input { border-color: #4ade80; }
-.blank-input.wrong-input   { border-color: #f87171; }
-textarea.blank-input { min-height: 80px; resize: vertical; font-family: inherit; }
-.check-btn { background: linear-gradient(135deg,#dc2626,#7c3aed); border: none; border-radius: 10px; padding: 11px 20px; font-size: 0.9rem; font-family: inherit; font-weight: 800; color: white; cursor: pointer; display: block; width: 100%; }
-.check-btn:disabled { opacity: 0.35; pointer-events: none; }
-.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.blank-input { background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.14); border-radius: 10px; padding: 11px 13px; color: #fff; font-size: .95rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #fdba74; }
+.blank-input.correct-input { border-color: #34d399; }
+.blank-input.wrong-input { border-color: #f87171; }
+textarea.blank-input { min-height: 80px; resize: vertical; }
+.check-btn { background: linear-gradient(135deg,#0d9488,#3b82f6); border: none; border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-family: inherit; font-weight: 800; color: #fff; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: .4; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: .9rem; line-height: 1.6; }
 .feedback.show { display: block; }
-.feedback.ok  { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.35); color: #6ee7b7; }
-.feedback.nok { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.35); color: #fca5a5; }
-.feedback.model { background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.35); color: #d8c9ff; }
-.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
-.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #fcd34d; }
-.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#dc2626,#7c3aed); color: white; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
-.result-panel { display: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(124,58,237,0.3); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.feedback.ok { background: rgba(52,211,153,.15); border: 1px solid #34d399; color: #a7f3d0; }
+.feedback.nok { background: rgba(248,113,113,.15); border: 1px solid #f87171; color: #fecaca; }
+.feedback.model { background: rgba(255,255,255,.05); border: 1px solid #fdba74; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#0d9488,#3b82f6); color: #fff; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
 .result-panel.show { display: block; }
 .result-big { font-size: 4rem; margin-bottom: 10px; }
-.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#dc2626,#a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
-.result-grade-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.result-msg   { font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 8px; }
-.result-score { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.result-grade { font-size: 3.2rem; font-weight: 900; color: #fdba74; margin: 8px 0 2px; }
+.result-grade-label { font-size: .8rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.result-score { font-size: .88rem; opacity: .75; margin-bottom: 16px; }
 .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#93c5fd,#1e3a8a); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
-.gabarito-link { flex: 1; min-width: 130px; background: rgba(124,58,237,0.15); border: 1.5px solid rgba(124,58,237,0.3); color: #a78bfa !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-prev { background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7) !important; }
-.btn-next { background: linear-gradient(135deg,#0c1f3d,#16233f); color: white !important; }
-.btn-home-only { background: rgba(37,99,235,0.12); border: 1.5px solid rgba(37,99,235,0.3); color: #93c5fd !important; flex: 0.6; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
-.credit strong { color: #93c5fd; }
-
-/* ---- PDF EXPORT (JS-generated) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .info-banner, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
-body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#0d9488,#3b82f6); color: #fff; border: none; border-radius: 14px; padding: 13px 16px; font-size: .9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; border: 1.5px solid #fdba74; color: #fdba74 !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
+.bottom-nav { display: flex; gap: 10px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid #fdba74; color: #fdba74; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#0d9488,#3b82f6); color: #fff; border: none; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .info-banner, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
 body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
-body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
-body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-body.pdf-export .card { border: 1px solid #ccc !important; }
-body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; color: #111 !important; background: transparent !important; }
+body.pdf-export .exam-header { border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; margin-bottom: 4px !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; }
 body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
-body.pdf-export .check-btn { display: none !important; }
-body.pdf-export .feedback { display: none !important; }
-body.pdf-export .q-hint { border: 1px solid #ddd !important; }
-body.pdf-export .header { background: white !important; border-bottom: 2px solid #dc2626 !important; }
-body.pdf-export .header h1, body.pdf-export .header p, body.pdf-export .level-tag { color: #111 !important; }
+body.pdf-export .check-btn, body.pdf-export .feedback { display: none !important; }
+body.pdf-export .header { border-bottom: 2px solid #0d9488 !important; }
 body.pdf-export .credit { color: #888 !important; }
-</style>
-</head>
-<body>
-<div class="top-nav">
-  <a href="index.html" class="nav-home">🏠 Início</a>
-  <span class="nav-title">💎 Nível 3 — Avançado</span>
-</div>
-
-<div class="exam-header">
-  <div class="eh-title">🇬🇧 Avaliação de Inglês — Nível 3</div>
-  <div class="eh-grid">
-    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
-  </div>
-</div>
-
-<div class="header">
-  <div class="level-tag">Nível 3</div>
-  <h1>💎 Avançado</h1>
-  <p>Leitura, raciocínio e reflexão — 21 questões</p>
-</div>
-
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span class="nav-title">💎 Nível 3 — Avançado</span></div>
+<div class="exam-header"><div class="eh-title">🏖️ Avaliação de Inglês — Nível 3 — Avançado</div>
+<div class="eh-grid"><div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div><div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div></div></div>
+<div class="header"><div class="level-tag">Nível 3 — Avançado</div><h1>💎 Nível 3 — Avançado</h1><p>Leituras em inglês, gramática e reflexão — 37 questões</p></div>
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="info-banner">💡 As questões de <strong>1 a 18</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
-<div class="score-bar">
-  <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 18</span>
-</div>
-
-<!-- Q1 -->
-<div class="card" id="q1">
-  <div class="q-num">1</div><span class="q-type">Reading · Read for fun</span>
-  <div class="q-hint">📖 No livro, Nicole e seus amigos estão no ônibus escolar e cada um fala sobre seu meio de transporte favorito.</div>
-  <div class="q-text">De acordo com o texto, o que <strong>Martina</strong> disse que ama?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q1" data-correct="true" data-msg="Isso mesmo! Martina disse 'I love airplanes!'" data-tip="">airplanes</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Eric é quem ama trucks." data-tip="💡 Cada criança do texto ama um meio de transporte diferente.">trucks</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Nicole é quem ama boats." data-tip="💡 Cada criança do texto ama um meio de transporte diferente.">boats</button>
-  </div>
-  <div class="feedback" id="fb-q1"></div>
-</div>
-
-<!-- Q2 -->
-<div class="card" id="q2">
-  <div class="q-num">2</div><span class="q-type">Reading · Read for fun</span>
-  <div class="q-text">Quem disse "I love trucks!" no texto?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q2" data-correct="true" data-msg="Isso mesmo! Eric ama trucks." data-tip="">Eric</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Martina ama airplanes." data-tip="💡 Pense nos nomes das crianças do ônibus.">Martina</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Nicole ama boats." data-tip="💡 Pense nos nomes das crianças do ônibus.">Nicole</button>
-  </div>
-  <div class="feedback" id="fb-q2"></div>
-</div>
-
-<!-- Q3 -->
-<div class="card" id="q3">
-  <div class="q-num">3</div><span class="q-type">Reading · Read for fun</span>
-  <div class="q-text">O que Nicole ama, segundo o texto?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q3" data-correct="true" data-msg="Isso mesmo! Nicole ama boats." data-tip="">boats</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Martina ama airplanes." data-tip="💡 Cada criança do texto ama um meio de transporte diferente.">airplanes</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Outro amigo ama trains." data-tip="💡 Cada criança do texto ama um meio de transporte diferente.">trains</button>
-  </div>
-  <div class="feedback" id="fb-q3"></div>
-</div>
-
-<!-- Q4 -->
-<div class="card" id="q4">
-  <div class="q-num">4</div><span class="q-type">Transportation</span>
-  <div class="q-text">Complete: "My father drives a big <strong>______</strong> for his job."</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q4" data-correct="true" data-msg="Isso mesmo! Truck é caminhão." data-tip="">truck</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! Bike é bicicleta, muito pequena para esse trabalho." data-tip="💡 Pense em um veículo grande, usado para transportar cargas.">bike</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! Boat é barco." data-tip="💡 Pense em um veículo grande, usado para transportar cargas.">boat</button>
-  </div>
-  <div class="feedback" id="fb-q4"></div>
-</div>
-
-<!-- Q5 blank -->
-<div class="card" id="q5">
-  <div class="q-num">5</div><span class="q-type">Transportation</span>
-  <div class="q-text">Complete: "Firefighters use a fire <strong>______</strong>."</div>
-  <input type="text" class="blank-input" id="inp-q5" placeholder="Digite a palavra em inglês...">
-  <button class="check-btn" id="btn-q5">Verificar resposta</button>
-  <div class="feedback" id="fb-q5"></div>
-</div>
-
-<!-- Q6 -->
-<div class="card" id="q6">
-  <div class="q-num">6</div><span class="q-type">Vocabulary</span>
-  <div class="q-text">Qual destas palavras NÃO é um meio de transporte?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! Car é um meio de transporte (carro)." data-tip="💡 Pense em qual dessas palavras é um lugar, não um veículo.">car</button>
-    <button class="opt-btn" data-q="q6" data-correct="true" data-msg="Isso mesmo! Library (biblioteca) é um lugar, não um meio de transporte." data-tip="">library</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! Boat é um meio de transporte (barco)." data-tip="💡 Pense em qual dessas palavras é um lugar, não um veículo.">boat</button>
-  </div>
-  <div class="feedback" id="fb-q6"></div>
-</div>
-
-<!-- Q7 blank -->
-<div class="card" id="q7">
-  <div class="q-num">7</div><span class="q-type">Transportation</span>
-  <div class="q-text">Complete: "The ambulance takes people to the <strong>______</strong>."</div>
-  <input type="text" class="blank-input" id="inp-q7" placeholder="Digite a palavra em inglês...">
-  <button class="check-btn" id="btn-q7">Verificar resposta</button>
-  <div class="feedback" id="fb-q7"></div>
-</div>
-
-<!-- Q8 -->
-<div class="card" id="q8">
-  <div class="q-num">8</div><span class="q-type">Traffic signs</span>
-  <div class="q-text">Qual sinal de trânsito indica que é proibido virar à esquerda?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q8" data-correct="true" data-msg="Isso mesmo! No left turn significa proibido virar à esquerda." data-tip="">no left turn</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Stop significa pare." data-tip="💡 'Left' significa esquerda!">stop</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Speed limit indica o limite de velocidade." data-tip="💡 'Left' significa esquerda!">speed limit</button>
-  </div>
-  <div class="feedback" id="fb-q8"></div>
-</div>
-
-<!-- Q9 blank -->
-<div class="card" id="q9">
-  <div class="q-num">9</div><span class="q-type">Traffic signs</span>
-  <div class="q-text">Traduza para o inglês: "faixa de pedestre".</div>
-  <input type="text" class="blank-input" id="inp-q9" placeholder="Digite em inglês (2 palavras)...">
-  <button class="check-btn" id="btn-q9">Verificar resposta</button>
-  <div class="feedback" id="fb-q9"></div>
-</div>
-
-<!-- Q10 -->
-<div class="card" id="q10">
-  <div class="q-num">10</div><span class="q-type">City x Town</span>
-  <div class="q-text">Se um lugar é "small and less populous" (pequeno e menos populoso), ele é chamado de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! Town é pequeno e menos populoso." data-tip="">town</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! City é grande e mais populosa." data-tip="💡 Pense no contrário de 'city'.">city</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Mall é shopping." data-tip="💡 Pense no contrário de 'city'.">mall</button>
-  </div>
-  <div class="feedback" id="fb-q10"></div>
-</div>
-
-<!-- Q11 -->
-<div class="card" id="q11">
-  <div class="q-num">11</div><span class="q-type">City x Town</span>
-  <div class="q-text">Se um lugar é "big, urban, and more populous" (grande, urbano e mais populoso), ele é chamado de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q11" data-correct="true" data-msg="Isso mesmo! City é grande, urbana e populosa." data-tip="">city</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! Town é pequena e menos populosa." data-tip="💡 Pense no contrário de 'town'.">town</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! Park é parque." data-tip="💡 Pense no contrário de 'town'.">park</button>
-  </div>
-  <div class="feedback" id="fb-q11"></div>
-</div>
-
-<!-- Q12 blank -->
-<div class="card" id="q12">
-  <div class="q-num">12</div><span class="q-type">Grammar</span>
-  <div class="q-text">Complete a pergunta usada para saber onde alguém está: "Where <strong>______</strong> you?"</div>
-  <input type="text" class="blank-input" id="inp-q12" placeholder="Digite a palavra em inglês...">
-  <button class="check-btn" id="btn-q12">Verificar resposta</button>
-  <div class="feedback" id="fb-q12"></div>
-</div>
-
-<!-- Q13 -->
-<div class="card" id="q13">
-  <div class="q-num">13</div><span class="q-type">Adverbs of place</span>
-  <div class="q-text">"She is in front of the restaurant" significa que ela está:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q13" data-correct="true" data-msg="Isso mesmo! In front of = em frente de." data-tip="">Na frente do restaurante</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Isso seria 'inside the restaurant'." data-tip="💡 'Front' lembra 'frente'!">Dentro do restaurante</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Essa frase não indica isso." data-tip="💡 'Front' lembra 'frente'!">Atrás do restaurante</button>
-  </div>
-  <div class="feedback" id="fb-q13"></div>
-</div>
-
-<!-- Q14 -->
-<div class="card" id="q14">
-  <div class="q-num">14</div><span class="q-type">Adverbs of place</span>
-  <div class="q-text">Qual é o oposto de "outside" (fora de)?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q14" data-correct="true" data-msg="Isso mesmo! Inside (dentro de) é o oposto de outside." data-tip="">inside</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Here é aqui." data-tip="💡 'In' e 'out' já são opostos em inglês!">here</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! There é lá." data-tip="💡 'In' e 'out' já são opostos em inglês!">there</button>
-  </div>
-  <div class="feedback" id="fb-q14"></div>
-</div>
-
-<!-- Q15 blank -->
-<div class="card" id="q15">
-  <div class="q-num">15</div><span class="q-type">Spelling</span>
-  <div class="q-text">Complete a soletração de "BANK": B - A - N - <strong>__</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q15" placeholder="Digite a letra...">
-  <button class="check-btn" id="btn-q15">Verificar resposta</button>
-  <div class="feedback" id="fb-q15"></div>
-</div>
-
-<!-- Q16 -->
-<div class="card" id="q16">
-  <div class="q-num">16</div><span class="q-type">The alphabet</span>
-  <div class="q-text">Qual destas sequências está na ordem correta do alfabeto?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q16" data-correct="true" data-msg="Isso mesmo! X, Y, Z é a ordem correta." data-tip="">X, Y, Z</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Essa ordem está invertida." data-tip="💡 Cante o final do alfabeto: ...X-Y-Z.">Z, Y, X</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Essa ordem está fora de sequência." data-tip="💡 Cante o final do alfabeto: ...X-Y-Z.">Y, X, Z</button>
-  </div>
-  <div class="feedback" id="fb-q16"></div>
-</div>
-
-<!-- Q17 -->
-<div class="card" id="q17">
-  <div class="q-num">17</div><span class="q-type">Transportation</span>
-  <div class="q-text">Qual meio de transporte tem hélice e pode decolar sem uma pista de pouso?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q17" data-correct="true" data-msg="Isso mesmo! Helicopter (helicóptero) decola na vertical." data-tip="">helicopter</button>
-    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! Airplane precisa de uma pista para decolar." data-tip="💡 Pense num veículo que voa parado no ar, como no resgate.">airplane</button>
-    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! Car anda apenas no chão." data-tip="💡 Pense num veículo que voa parado no ar, como no resgate.">car</button>
-  </div>
-  <div class="feedback" id="fb-q17"></div>
-</div>
-
-<!-- Q18 blank -->
-<div class="card" id="q18">
-  <div class="q-num">18</div><span class="q-type">Traffic signs</span>
-  <div class="q-text">Traduza para o inglês: "estacionamento de bicicleta".</div>
-  <input type="text" class="blank-input" id="inp-q18" placeholder="Digite em inglês (2 palavras)...">
-  <button class="check-btn" id="btn-q18">Verificar resposta</button>
-  <div class="feedback" id="fb-q18"></div>
-</div>
-
-<!-- Q19 reflection -->
-<div class="card reflect" id="q19">
-  <div class="q-num">19</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Cite três lugares (em inglês) que você gostaria que tivesse na sua "dream town" (cidade dos sonhos).</div>
-  <textarea class="blank-input" id="inp-q19" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q19">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q19"></div>
-</div>
-
-<!-- Q20 reflection -->
-<div class="card reflect" id="q20">
-  <div class="q-num">20</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Escreva uma frase em inglês usando um advérbio de lugar (here, there, inside, outside, in front of) para descrever onde você está agora.</div>
-  <textarea class="blank-input" id="inp-q20" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q20">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q20"></div>
-</div>
-
-<!-- Q21 reflection -->
-<div class="card reflect" id="q21">
-  <div class="q-num">21</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Você prefere morar em uma city ou em uma town? Explique por quê (pode responder em português).</div>
-  <textarea class="blank-input" id="inp-q21" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q21">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q21"></div>
-</div>
-
+<div class="info-banner">💡 As questões de <strong>1 a 33</strong> valem ponto. As <strong>4 últimas</strong> são de reflexão (sem certo ou errado): é só conferir a sugestão!</div>
+<div class="score-bar"><span class="score-label">Pontuação</span><span class="score-num" id="scoreDisplay">0 / 33</span></div>
+<div class="card passage"><div class="q-type" style="margin:0">📖 Reading 1 — Leo&#x27;s vacation</div><div class="q-text" style="margin-top:8px">Hi! I am Leo. I love my vacation at the beach. I can swim and I can build a big sandcastle. My sister, Ana, can&#x27;t swim, but she can surf. My grandpa likes to relax and read a book under the umbrella. On my next vacation, I want to go to the mountains. I like to hike and ride a bike.</div></div>
+<div class="card" id="q1" data-type="mc" data-ans="At the beach" data-exp="&quot;I love my vacation at the beach.&quot;"><div class="q-num">1</div><span class="q-type">Reading 1</span><div class="q-text">Where is Leo on vacation?</div><div class="options"><button class="opt-btn" data-c="0">On a farm</button><button class="opt-btn" data-c="0">In a big city</button><button class="opt-btn" data-c="1">At the beach</button></div><div class="feedback"></div></div>
+<div class="card" id="q2" data-type="mc" data-ans="A big sandcastle" data-exp="&quot;I can build a big sandcastle.&quot;"><div class="q-num">2</div><span class="q-type">Reading 1</span><div class="q-text">What can Leo build?</div><div class="options"><button class="opt-btn" data-c="0">A big bike</button><button class="opt-btn" data-c="1">A big sandcastle</button><button class="opt-btn" data-c="0">A big museum</button></div><div class="feedback"></div></div>
+<div class="card" id="q3" data-type="mc" data-ans="No, she can&#x27;t." data-exp="&quot;My sister, Ana, can&#x27;t swim.&quot;"><div class="q-num">3</div><span class="q-type">Reading 1</span><div class="q-text">Can Ana swim?</div><div class="options"><button class="opt-btn" data-c="1">No, she can&#x27;t.</button><button class="opt-btn" data-c="0">Yes, she can&#x27;t.</button><button class="opt-btn" data-c="0">Yes, she can.</button></div><div class="feedback"></div></div>
+<div class="card" id="q4" data-type="mc" data-ans="She can surf." data-exp="&quot;...but she can surf.&quot;"><div class="q-num">4</div><span class="q-type">Reading 1</span><div class="q-text">What can Ana do?</div><div class="options"><button class="opt-btn" data-c="0">She can ride a horse.</button><button class="opt-btn" data-c="0">She can play tennis.</button><button class="opt-btn" data-c="1">She can surf.</button></div><div class="feedback"></div></div>
+<div class="card" id="q5" data-type="mc" data-ans="Relax and read a book" data-exp="&quot;My grandpa likes to relax and read a book.&quot;"><div class="q-num">5</div><span class="q-type">Reading 1</span><div class="q-text">What does grandpa like to do?</div><div class="options"><button class="opt-btn" data-c="0">Surf and swim</button><button class="opt-btn" data-c="0">Hike and ride a bike</button><button class="opt-btn" data-c="1">Relax and read a book</button></div><div class="feedback"></div></div>
+<div class="card" id="q6" data-type="mc" data-ans="To the mountains" data-exp="&quot;I want to go to the mountains.&quot;"><div class="q-num">6</div><span class="q-type">Reading 1</span><div class="q-text">Where does Leo want to go on his next vacation?</div><div class="options"><button class="opt-btn" data-c="0">To the farm</button><button class="opt-btn" data-c="1">To the mountains</button><button class="opt-btn" data-c="0">To the water park</button></div><div class="feedback"></div></div>
+<div class="card" id="q7" data-type="mc" data-ans="bike" data-exp="Macete: BIKE = B-I-K-E. O E no final é mudo (igual a HORSE)."><div class="q-num">7</div><span class="q-type">Reading 1</span><div class="q-text">Complete: In the mountains, Leo likes to hike and ride a ______. Qual é a escrita CERTA?</div><div class="options"><button class="opt-btn" data-c="0">bick</button><button class="opt-btn" data-c="0">biyk</button><button class="opt-btn" data-c="1">bike</button></div><div class="feedback"></div></div>
+<div class="card passage"><div class="q-type" style="margin:0">📖 Reading 2 — Mia and Tom</div><div class="q-text" style="margin-top:8px">Mia: What are your plans for the next vacation?
+Tom: I want to go to a farm.
+Mia: Cool! What do you like to do on a farm?
+Tom: I like to ride a horse and plant flowers. Can you ride a horse, Mia?
+Mia: No, I can&#x27;t. But I can go fishing!</div></div>
+<div class="card" id="q8" data-type="mc" data-ans="To a farm" data-exp="&quot;I want to go to a farm.&quot;"><div class="q-num">8</div><span class="q-type">Reading 2</span><div class="q-text">Where does Tom want to go?</div><div class="options"><button class="opt-btn" data-c="1">To a farm</button><button class="opt-btn" data-c="0">To the beach</button><button class="opt-btn" data-c="0">To a big city</button></div><div class="feedback"></div></div>
+<div class="card" id="q9" data-type="mc" data-ans="Ride a horse and plant flowers" data-exp="&quot;I like to ride a horse and plant flowers.&quot;"><div class="q-num">9</div><span class="q-type">Reading 2</span><div class="q-text">What does Tom like to do on a farm?</div><div class="options"><button class="opt-btn" data-c="0">Visit a museum</button><button class="opt-btn" data-c="1">Ride a horse and plant flowers</button><button class="opt-btn" data-c="0">Surf and swim</button></div><div class="feedback"></div></div>
+<div class="card" id="q10" data-type="mc" data-ans="No, she can&#x27;t." data-exp="Mia: &quot;No, I can&#x27;t.&quot;"><div class="q-num">10</div><span class="q-type">Reading 2</span><div class="q-text">Can Mia ride a horse?</div><div class="options"><button class="opt-btn" data-c="0">Yes, she can&#x27;t.</button><button class="opt-btn" data-c="0">Yes, she can.</button><button class="opt-btn" data-c="1">No, she can&#x27;t.</button></div><div class="feedback"></div></div>
+<div class="card" id="q11" data-type="mc" data-ans="She can go fishing." data-exp="&quot;But I can go fishing!&quot;"><div class="q-num">11</div><span class="q-type">Reading 2</span><div class="q-text">What can Mia do?</div><div class="options"><button class="opt-btn" data-c="1">She can go fishing.</button><button class="opt-btn" data-c="0">She can surf.</button><button class="opt-btn" data-c="0">She can play the guitar.</button></div><div class="feedback"></div></div>
+<div class="card" id="q12" data-type="mc" data-ans="vacation" data-exp="Macete: VA-CA-TION. O final &quot;tion&quot; lê-se &quot;chon&quot;, como o &quot;ção&quot; do português (va-ca-ção)."><div class="q-num">12</div><span class="q-type">Reading 2</span><div class="q-text">Complete: Mia asks Tom about the next ______. (férias) Qual é a escrita CERTA?</div><div class="options"><button class="opt-btn" data-c="1">vacation</button><button class="opt-btn" data-c="0">vaccation</button><button class="opt-btn" data-c="0">vacatoin</button></div><div class="feedback"></div></div>
+<div class="card" id="q13" data-type="mc" data-ans="Eu não sei andar a cavalo." data-exp="can&#x27;t = não sei / não consigo."><div class="q-num">13</div><span class="q-type">Tradução</span><div class="q-text">Qual é a tradução de &quot;I can&#x27;t ride a horse&quot;?</div><div class="options"><button class="opt-btn" data-c="1">Eu não sei andar a cavalo.</button><button class="opt-btn" data-c="0">Eu gosto de andar a cavalo.</button><button class="opt-btn" data-c="0">Eu sei andar a cavalo.</button></div><div class="feedback"></div></div>
+<div class="card" id="q14" data-type="mc" data-ans="Ela sabe tocar violão." data-exp="She can = ela sabe."><div class="q-num">14</div><span class="q-type">Tradução</span><div class="q-text">Qual é a tradução de &quot;She can play the guitar&quot;?</div><div class="options"><button class="opt-btn" data-c="1">Ela sabe tocar violão.</button><button class="opt-btn" data-c="0">Ela não sabe tocar violão.</button><button class="opt-btn" data-c="0">Ela quer tocar violão.</button></div><div class="feedback"></div></div>
+<div class="card" id="q15" data-type="mc" data-ans="Eles gostam de fazer trilha e acampar." data-exp="like to = gostar de."><div class="q-num">15</div><span class="q-type">Tradução</span><div class="q-text">Qual é a tradução de &quot;They like to hike and camp&quot;?</div><div class="options"><button class="opt-btn" data-c="0">Eles querem fazer trilha e acampar.</button><button class="opt-btn" data-c="0">Eles sabem fazer trilha e acampar.</button><button class="opt-btn" data-c="1">Eles gostam de fazer trilha e acampar.</button></div><div class="feedback"></div></div>
+<div class="card" id="q16" data-type="mc" data-ans="Can you ride a bike?" data-exp="Pergunta com can: Can + you + verbo."><div class="q-num">16</div><span class="q-type">Gramática</span><div class="q-text">Qual frase está correta?</div><div class="options"><button class="opt-btn" data-c="0">Can you bike ride a?</button><button class="opt-btn" data-c="1">Can you ride a bike?</button><button class="opt-btn" data-c="0">Can you rides a bike?</button></div><div class="feedback"></div></div>
+<div class="card" id="q17" data-type="mc" data-ans="On my next vacation, I want to go to the beach." data-exp="A ordem das palavras importa."><div class="q-num">17</div><span class="q-type">Gramática</span><div class="q-text">Qual frase está na ordem certa?</div><div class="options"><button class="opt-btn" data-c="0">Beach the want I to go next vacation my on.</button><button class="opt-btn" data-c="1">On my next vacation, I want to go to the beach.</button><button class="opt-btn" data-c="0">I go want to beach the on my next vacation.</button></div><div class="feedback"></div></div>
+<div class="card" id="q18" data-type="mc" data-ans="can / can&#x27;t" data-exp="Na tabela: Cazuza ✅ surf, ❌ ride a bike."><div class="q-num">18</div><span class="q-type">Gramática</span><div class="q-text">Complete: &quot;Cazuza ______ surf, but he ______ ride a bike.&quot;</div><div class="options"><button class="opt-btn" data-c="1">can / can&#x27;t</button><button class="opt-btn" data-c="0">can&#x27;t / can</button><button class="opt-btn" data-c="0">can / can</button></div><div class="feedback"></div></div>
+<div class="card" id="q19" data-type="mc" data-ans="can&#x27;t" data-exp="Os dois têm ❌ em play the guitar."><div class="q-num">19</div><span class="q-type">Gramática</span><div class="q-text">Complete: &quot;Luísa and Sabino ______ play the guitar.&quot;</div><div class="options"><button class="opt-btn" data-c="0">can</button><button class="opt-btn" data-c="0">cans</button><button class="opt-btn" data-c="1">can&#x27;t</button></div><div class="feedback"></div></div>
+<div class="card" id="q20" data-type="mc" data-ans="can / can" data-exp="Sabino ✅ swim, ✅ bike."><div class="q-num">20</div><span class="q-type">Gramática</span><div class="q-text">Complete: &quot;Sabino ______ swim and ______ ride a bike.&quot;</div><div class="options"><button class="opt-btn" data-c="0">can&#x27;t / can</button><button class="opt-btn" data-c="0">can / can&#x27;t</button><button class="opt-btn" data-c="1">can / can</button></div><div class="feedback"></div></div>
+<div class="card" id="q21" data-type="mc" data-ans="swim" data-exp="Depois de like to, usamos o verbo sem &quot;s&quot;."><div class="q-num">21</div><span class="q-type">Gramática</span><div class="q-text">Qual verbo completa: &quot;I like to ______ in the pool.&quot;</div><div class="options"><button class="opt-btn" data-c="0">swimming to</button><button class="opt-btn" data-c="0">swims</button><button class="opt-btn" data-c="1">swim</button></div><div class="feedback"></div></div>
+<div class="card" id="q22" data-type="mc" data-ans="False" data-exp="Na tabela, Luísa tem ❌ em swim."><div class="q-num">22</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">True or false: Luísa can swim.</div><div class="options"><button class="opt-btn" data-c="1">False</button><button class="opt-btn" data-c="0">True</button></div><div class="feedback"></div></div>
+<div class="card" id="q23" data-type="mc" data-ans="True" data-exp="Cazuza tem ✅ em play the guitar."><div class="q-num">23</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">True or false: Cazuza can play the guitar.</div><div class="options"><button class="opt-btn" data-c="1">True</button><button class="opt-btn" data-c="0">False</button></div><div class="feedback"></div></div>
+<div class="card" id="q24" data-type="mc" data-ans="False" data-exp="Sabino tem ❌ em surf."><div class="q-num">24</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">True or false: Sabino can surf.</div><div class="options"><button class="opt-btn" data-c="0">True</button><button class="opt-btn" data-c="1">False</button></div><div class="feedback"></div></div>
+<div class="card" id="q25" data-type="mc" data-ans="False" data-exp="O Colosseum fica na Itália."><div class="q-num">25</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">True or false: The Colosseum is in France.</div><div class="options"><button class="opt-btn" data-c="1">False</button><button class="opt-btn" data-c="0">True</button></div><div class="feedback"></div></div>
+<div class="card" id="q26" data-type="mc" data-ans="True" data-exp="Big Ben fica no Reino Unido."><div class="q-num">26</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">True or false: Big Ben is in the United Kingdom.</div><div class="options"><button class="opt-btn" data-c="0">False</button><button class="opt-btn" data-c="1">True</button></div><div class="feedback"></div></div>
+<div class="card" id="q27" data-type="mc" data-ans="True" data-exp="The sea is part of the ocean."><div class="q-num">27</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">True or false: The sea is part of the ocean.</div><div class="options"><button class="opt-btn" data-c="1">True</button><button class="opt-btn" data-c="0">False</button></div><div class="feedback"></div></div>
+<div class="card" id="q28" data-type="mc" data-ans="Christ the Redeemer" data-exp="Cristo Redentor."><div class="q-num">28</div><span class="q-type">Famous places</span><div class="q-text">Which monument is in Brazil?</div><div class="options"><button class="opt-btn" data-c="0">Eiffel Tower</button><button class="opt-btn" data-c="0">Great Wall</button><button class="opt-btn" data-c="1">Christ the Redeemer</button></div><div class="feedback"></div></div>
+<div class="card" id="q29" data-type="mc" data-ans="Australia" data-exp="Sydney Opera House = Austrália."><div class="q-num">29</div><span class="q-type">Famous places</span><div class="q-text">Which country has the Sydney Opera House?</div><div class="options"><button class="opt-btn" data-c="0">Italy</button><button class="opt-btn" data-c="0">USA</button><button class="opt-btn" data-c="1">Australia</button></div><div class="feedback"></div></div>
+<div class="card" id="q30" data-type="mc" data-ans="cloudy" data-exp="cloudy = nublado."><div class="q-num">30</div><span class="q-type">Clima e meses</span><div class="q-text">Qual é o clima quando o céu está cheio de nuvens?</div><div class="options"><button class="opt-btn" data-c="0">snowy</button><button class="opt-btn" data-c="0">sunny</button><button class="opt-btn" data-c="1">cloudy</button></div><div class="feedback"></div></div>
+<div class="card" id="q31" data-type="mc" data-ans="August" data-exp="Ordem: July, August, September, October."><div class="q-num">31</div><span class="q-type">Clima e meses</span><div class="q-text">Qual mês vem antes de September?</div><div class="options"><button class="opt-btn" data-c="1">August</button><button class="opt-btn" data-c="0">October</button><button class="opt-btn" data-c="0">July</button></div><div class="feedback"></div></div>
+<div class="card" id="q32" data-type="mc" data-ans="summer" data-exp="Summer = verão."><div class="q-num">32</div><span class="q-type">Clima e meses</span><div class="q-text">Em qual estação a gente costuma ir à praia no Brasil?</div><div class="options"><button class="opt-btn" data-c="0">winter</button><button class="opt-btn" data-c="1">summer</button><button class="opt-btn" data-c="0">fall</button></div><div class="feedback"></div></div>
+<div class="card" id="q33" data-type="mc" data-ans="December" data-exp="December = dezembro."><div class="q-num">33</div><span class="q-type">Clima e meses</span><div class="q-text">Qual é o último mês do ano?</div><div class="options"><button class="opt-btn" data-c="0">January</button><button class="opt-btn" data-c="0">November</button><button class="opt-btn" data-c="1">December</button></div><div class="feedback"></div></div>
+<div class="card reflect" id="q34" data-type="rf" data-model="Sugestão: I like to swim. I like to read a book. I like to ride a bike."><div class="q-num">34</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escreva 3 frases com &quot;I like to...&quot; sobre o que você gosta de fazer nas férias.</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q35" data-type="rf" data-model="Sugestão: On my next vacation, I want to go to the beach with my family."><div class="q-num">35</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escreva onde você quer ir nas próximas férias e com quem: &quot;On my next vacation, I want to go to ...&quot;</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q36" data-type="rf" data-model="Sugestão: I can swim. I can ride a bike. I can read a book. I can&#x27;t surf."><div class="q-num">36</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escreva 3 coisas que você sabe fazer (I can...) e 1 que você não sabe (I can&#x27;t...).</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q37" data-type="rf" data-model="Sugestão: I like the sea because I can swim. (Eu gosto do mar porque eu sei nadar.)"><div class="q-num">37</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escolha um elemento da natureza e complete: &quot;I like ______ because ______.&quot;</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
-
-<div class="result-panel" id="resultPanel">
-  <div class="result-big" id="resultEmoji">🎉</div>
-  <div class="result-grade" id="resultGrade"></div>
-  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
-  <div class="result-grade-label" id="resultGradeLabel"></div>
-  <div class="result-msg" id="resultMsg"></div>
-  <div class="result-score" id="resultScore"></div>
-  <div class="result-actions">
-    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
-    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
-  </div>
+<div class="result-panel" id="resultPanel"><div class="result-big" id="resultEmoji">🎉</div><div class="result-grade" id="resultGrade"></div>
+<div class="result-grade-label">pontos</div><div class="result-grade-label" id="resultGradeLabel"></div><div class="result-msg" id="resultMsg"></div><div class="result-score" id="resultScore"></div>
+<div class="result-actions"><button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button><a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a></div></div>
+<div class="bottom-nav"><a href="nivel2_intermediario.html">← Voltar</a><a href="index.html" style="flex:.5">🏠</a><a class="nx" href="gabarito.html">Avançar →</a></div>
 </div>
-
-<div class="bottom-nav">
-  <a href="nivel2_intermediario.html" class="btn-prev">← Nível 2</a>
-  <a href="index.html" class="btn-home-only">🏠</a>
-  <a href="gabarito.html" class="btn-next">📋 Gabarito →</a>
-</div>
-</div>
-
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-var score = 0;
-var answered = {};
-var total = 18;
-
-var blankCfg = {
-  'q5':  { accepts: ['truck'], ok: 'Isso mesmo! Fire truck é o caminhão de bombeiro.', nok: 'A resposta correta é: truck.', tip: '💡 Pense no veículo vermelho que apaga incêndio.' },
-  'q7':  { accepts: ['hospital'], ok: 'Isso mesmo! A ambulância leva pessoas ao hospital.', nok: 'A resposta correta é: hospital.', tip: '💡 É o mesmo lugar onde médicos atendem emergências.' },
-  'q9':  { accepts: ['pedestrian crossing'], ok: 'Isso mesmo! Pedestrian crossing é a faixa de pedestre.', nok: 'A resposta correta é: pedestrian crossing.', tip: '💡 "Pedestrian" quer dizer pedestre!' },
-  'q12': { accepts: ['are'], ok: 'Isso mesmo! "Where are you?" pergunta onde você está.', nok: 'A resposta correta é: are.', tip: '💡 Usamos "are" com "you" (você/vocês).' },
-  'q15': { accepts: ['k'], ok: 'Isso mesmo! B-A-N-K soletra "bank".', nok: 'A resposta correta é: K.', tip: '💡 Pense na palavra "bank" (banco) completa.' },
-  'q18': { accepts: ['bike parking'], ok: 'Isso mesmo! Bike parking é o estacionamento de bicicleta.', nok: 'A resposta correta é: bike parking.', tip: '💡 "Bike" é bicicleta e "parking" é estacionamento.' },
-};
-
-var reflectionModel = {
-  'q19': 'Sugestão: You could write, for example: "In my dream town, there are a mall, a pet shop, and a park." (Na minha cidade dos sonhos, tem um shopping, uma pet shop e um parque.)',
-  'q20': 'Sugestão: Por exemplo: "I am here at home." (Eu estou aqui em casa.) ou "The park is there." (O parque é ali.)',
-  'q21': 'Sugestão: resposta pessoal! Quem prefere city geralmente valoriza ter mais opções de lazer e serviços por perto. Quem prefere town geralmente valoriza a tranquilidade e um ritmo de vida mais calmo.'
-};
-
-function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
-  var fb = document.getElementById('fb-' + qid);
-  if (isCorrect) {
-    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
-    fb.className = 'feedback show ok';
-  } else {
-    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
-    fb.className = 'feedback show nok';
-  }
-}
-
-document.querySelectorAll('.opt-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var qid = btn.dataset.q;
-    if (answered[qid]) return;
-    answered[qid] = true;
-    var correct = btn.dataset.correct === 'true';
-    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
-    if (correct) {
-      btn.classList.add('correct'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, btn.dataset.msg, '', '');
-    } else {
-      btn.classList.add('wrong');
-      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
-    }
+var total = 33, score = 0;
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim(); }
+function upd(){ document.getElementById('scoreDisplay').textContent = score + ' / ' + total; }
+document.querySelectorAll('.card[data-type="mc"]').forEach(function(card){
+  var fb = card.querySelector('.feedback');
+  card.querySelectorAll('.opt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (card.getAttribute('data-done')) return;
+      card.setAttribute('data-done','1');
+      card.querySelectorAll('.opt-btn').forEach(function(x){ x.classList.add('disabled'); if (x.getAttribute('data-c')==='1') x.classList.add('correct'); });
+      if (b.getAttribute('data-c')==='1') { score++; upd(); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+      else { b.classList.add('wrong'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+    });
   });
 });
-
-Object.keys(blankCfg).forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  if (!btn) return;
-  btn.addEventListener('click', function() {
-    if (answered[qid]) return;
-    answered[qid] = true;
-    btn.disabled = true;
-    var inp = document.getElementById('inp-' + qid);
-    var val = inp.value.trim().toLowerCase().replace(/[.!?]$/, '');
-    var cfg = blankCfg[qid];
-    if (cfg.accepts.indexOf(val) !== -1) {
-      inp.classList.add('correct-input'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, cfg.ok, '', '');
-    } else {
-      inp.classList.add('wrong-input');
-      showFeedback(qid, false, '', cfg.nok, cfg.tip);
-    }
+document.querySelectorAll('.card[data-type="bl"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), inp = card.querySelector('input'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){
+    if (card.getAttribute('data-done')) return;
+    card.setAttribute('data-done','1'); btn.disabled = true;
+    var accs = card.getAttribute('data-acc').split('|').map(norm);
+    if (accs.indexOf(norm(inp.value)) !== -1) { score++; upd(); inp.classList.add('correct-input'); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+    else { inp.classList.add('wrong-input'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
   });
 });
-
-['q19','q20','q21'].forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  btn.addEventListener('click', function() {
-    btn.disabled = true;
-    var fb = document.getElementById('fb-' + qid);
-    fb.innerHTML = '<span class="fb-answer">💡 ' + reflectionModel[qid] + '</span>';
-    fb.className = 'feedback show model';
-  });
+document.querySelectorAll('.card[data-type="rf"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){ btn.disabled = true; fb.innerHTML = '💡 ' + card.getAttribute('data-model'); fb.className = 'feedback show model'; });
 });
-
-document.getElementById('finishBtn').addEventListener('click', function() {
-  var panel = document.getElementById('resultPanel');
-  panel.classList.add('show');
-  var nota = Math.round((score / total) * 100);
-  var emoji, msg, gradeLabel;
-  if (nota === 100)     { emoji = '🏆'; msg = 'Sensacional! Você dominou o nível avançado! 🌟'; gradeLabel = 'PERFEITO!'; }
-  else if (nota >= 90)  { emoji = '🎉'; msg = 'Incrível! Quase perfeito, mande ver na prova! 💪'; gradeLabel = 'EXCELENTE!'; }
-  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Você está pronta(o) para a prova! 🎯'; gradeLabel = 'MUITO BOM!'; }
-  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom trabalho! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
-  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Releia o resumo com calma!'; gradeLabel = 'PODE MAIS!'; }
-  else                   { emoji = '📚'; msg = 'Não desista! Volte ao resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
-  document.getElementById('resultEmoji').textContent = emoji;
+document.getElementById('finishBtn').addEventListener('click', function(){
+  var panel = document.getElementById('resultPanel'); panel.classList.add('show');
+  var p = Math.round(score / total * 100), e, m, l;
+  if (p === 100) { e='🏆'; m='Perfeito! Você arrasou!'; l='PERFEITO!'; }
+  else if (p >= 90) { e='🎉'; m='Quase perfeito, continue assim!'; l='EXCELENTE!'; }
+  else if (p >= 75) { e='😄'; m='Muito bem! Você está dominando!'; l='MUITO BOM!'; }
+  else if (p >= 60) { e='😊'; m='Bom! Leia as explicações e tente de novo.'; l='BOM!'; }
+  else if (p >= 40) { e='💪'; m='Continue! Releia o resumo e tente outra vez.'; l='PODE MAIS!'; }
+  else { e='📚'; m='Sem desistir! Leia o resumo com calma e tente de novo. 💛'; l='ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = e;
   document.getElementById('resultGrade').textContent = score + ' / ' + total;
-  document.getElementById('resultGradeLabel').textContent = gradeLabel;
-  document.getElementById('resultMsg').textContent = msg;
-  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões que valem ponto.';
+  document.getElementById('resultGradeLabel').textContent = l;
+  document.getElementById('resultMsg').textContent = m;
+  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
   panel.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -476,25 +188,15 @@ function downloadPDF() {
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Ingles_Nivel3_Avancado.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Ingles_Nivel3_Avancado.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
-</script>
-</body>
-</html>
+
+</script></body></html>
